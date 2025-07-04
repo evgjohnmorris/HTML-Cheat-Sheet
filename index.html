@@ -1,339 +1,1080 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>HTML Cheat Sheet</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2em; }
-    nav ul { list-style: none; padding: 0; }
-    nav ul li { margin-bottom: 0.25em; }
-    pre { background: #f4f4f4; padding: 1em; overflow-x: auto; }
-    h2 { margin-top: 2em; }
-    code { background: #eee; padding: 0.2em 0.4em; border-radius: 3px; }
-  </style>
-</head>
-<body>
-<h1>HTML Cheat Sheet</h1>
+<!-- HTML Cheat‑Sheet · Section A only · code ▶ result · no CSS/JS -->
+    <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width,initial-scale=1">
+                <title>HTML Cheat‑Sheet</title>
+            </head>
+        <body>
+            <h1>HTML Cheat Sheet</h1>
+            <p>HTML Guide Utilizing only html. Thats all.</p>
 
-<!-- Table of Contents -->
-<nav>
-  <h2>Table of Contents</h2>
+            <p><em>Salvation is in Jesus Christ alone; <br>
+              Repent and trust in Jesus Christ alone <br>
+              for forgiveness of sin and salvation today!<br>
+              <a href="https://the-gospel-message.notion.site/">The Gospel Message</a></em></p>
+
+            <hr>
+
+            <!-- ───────── Cheat-Sheet Table of Contents ───────── -->
+<nav id="toc">
+  <h2>HTML Table of Contents</h2>
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#document-structure">Document Structure</a></li>
-    <li><a href="#metadata">Metadata</a></li>
-    <li><a href="#text-basics">Text Basics</a></li>
-    <li><a href="#inline-text-semantics">Inline Text Semantics</a></li>
-    <li><a href="#grouping-content">Grouping Content</a></li>
-    <li><a href="#lists">Lists</a></li>
-    <li><a href="#links">Links</a></li>
-    <li><a href="#images">Images</a></li>
-    <li><a href="#audio-and-video">Audio and Video</a></li>
-    <li><a href="#tables">Tables</a></li>
-    <li><a href="#forms">Forms</a></li>
-    <li><a href="#semantic-elements">Semantic Elements</a></li>
-    <li><a href="#embedded-content">Embedded Content</a></li>
-    <li><a href="#html5-elements">Other Useful HTML5 Elements</a></li>
-    <li><a href="#scripting">Scripting</a></li>
-    <li><a href="#global-attributes">Global Attributes</a></li>
-    <li><a href="#accessibility">Accessibility</a></li>
-    <li><a href="#best-practices">Best Practices</a></li>
-    <li><a href="#deprecated">Deprecated Tags</a></li>
-    <li><a href="#reference-links">Reference Links</a></li>
+    <li><a href="#A.1">Section A — Document Identity &amp; Skeleton</a></li>
+    <li><a href="#B.1">Section B — Global Attributes</a></li>
+    <li><a href="#C.1">Section C — Head Metadata &amp; Hints</a></li>
+    <li><a href="#D.1">Section D — Sectioning &amp; Interactive</a></li>
+    <li><a href="#E.1">Section E — Block-Text &amp; Lists</a></li>
+    <li><a href="#F.1">Section F — Inline Semantics</a></li>
+    <li><a href="#G.1">Section G — Tables</a></li>
+    <li><a href="#H.1">Section H — Form Container &amp; Semantics</a></li>
+    <li><a href="#I.1">Section I — Input Controls &amp; Widgets</a></li>
+    <li><a href="#J.1">Section J — Media &amp; Embeds</a></li>
+    <li><a href="#K.1">Section K — Accessibility Quick-Ref</a></li>
+    <li><a href="#L.1">Section L — Performance &amp; Formatting</a></li>
+    <li><a href="#M.1">Section M — Email-Safe Legacy</a></li>
+    <li><a href="#N.1">Section N — Web Components</a></li>
   </ul>
 </nav>
+<hr>
+<!-- ──────────────────────────────────────────────── -->
 
-<!-- Section: Introduction -->
-<h2 id="introduction">Introduction</h2>
-<p>This page covers the key elements of HTML and HTML5 using pure markup. Each section lists core tags with short explanations.</p>
+<!-- ───────── Navigator (Section A only) ───────── -->
 
-<!-- Section: Document Structure -->
-<h2 id="document-structure">Document Structure</h2>
-<p><strong>Note:</strong> Basic layout of an HTML document.</p>
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;!-- content --&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+            
+
+<!-- ========== A Document Identity & Skeleton ========== -->
+
+            <head><title>HTML Cheat‑Sheet — Section A</title>
+            </head>
+
+            <h2>Section A · Document Identity &amp; Skeleton</h2>
+
+<details id="A.1"><summary>&lt;!DOCTYPE html&gt;</summary>
+<p><strong>Description:</strong> Declares HTML 5 and forces standards mode.</p>
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+<p><em>Rendered output:</em> (none)</p>
+</details>
+
+<details id="A.2"><summary>&lt;html lang="en" dir="ltr"&gt;</summary>
+<p><strong>Description:</strong> Root element; <code>lang</code> sets language, <code>dir</code> defines text flow.</p>
+<pre><code>&lt;html lang="en" dir="ltr"&gt;
+  …
+&lt;/html&gt;</code></pre>
+<p><em>Rendered output:</em> (wrapper, invisible)</p>
+</details>
+
+<details id="A.3"><summary>Minimal &lt;head&gt; stub</summary>
+<p><strong>Description:</strong> Metadata container that holds the document title.</p>
+<pre><code>&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Page&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+<p><em>Rendered output:</em> Browser tab shows “Page”.</p>
+</details>
+
+<details id="A.4"><summary>Minimal &lt;body&gt; stub</summary>
+<p><strong>Description:</strong> Main container for all visible page content.</p>
+<pre><code>&lt;body&gt;
+  …
+&lt;/body&gt;</code></pre>
+</details>
+
+<details id="A.5"><summary>HTML comments (regular + conditional)</summary>
+<p><strong>Description:</strong> Comments are ignored by the browser. Conditional comments worked only in legacy IE.</p>
+<pre><code>&lt;!-- regular comment --&gt;
+&lt;!--[if IE]&gt;&lt;p&gt;Conditional for IE&lt;/p&gt;&lt;![endif]--&gt;
+&lt;p&gt;Visible paragraph&lt;/p&gt;</code></pre>
+<p><em>Rendered output:</em></p>
+<!-- regular comment -->
+<!--[if IE]><p>Conditional for IE</p><![endif]-->
+<p>Visible paragraph</p>
+</details>
+
+<details id="A.6"><summary>Entity escapes</summary>
+<p><strong>Description:</strong> Encode reserved characters with named or numeric entities.</p>
+<pre><code>&amp;amp; &amp;lt; &amp;gt; &amp;quot; &amp;apos; &amp;#128512;</code></pre>
+<p><em>Rendered output:</em> &amp; &lt; &gt; " ' 😀</p>
+</details>
+
+<details id="A.7"><summary>Empty &lt;style&gt; / &lt;script&gt;</summary>
+<p><strong>Description:</strong> Legal but inert tags if left empty.</p>
+<pre><code>&lt;style&gt;&lt;/style&gt;
+&lt;script&gt;&lt;/script&gt;</code></pre>
+<p><em>Rendered output:</em> (none)</p>
+</details>
+
+<details id="A.8"><summary>&lt;noscript&gt; stub</summary>
+<p><strong>Description:</strong> Fallback content for users with JavaScript disabled.</p>
+<pre><code>&lt;noscript&gt;Enable JavaScript&lt;/noscript&gt;</code></pre>
+<p><em>Rendered output:</em> Enable JavaScript</p>
+</details>
+
+<hr>
+
+
+<!-- ───────── Navigator (Section B only) ───────── -->
+<title>HTML Cheat‑Sheet — Section B</title>
+</head>
+<body>
+<h2>Section B · Global Attributes</h2>
+
+
+
+<!-- ========== Section B · Global Attributes ========== -->
+<details id="B.1"><summary>Core attributes — <code>id</code>, <code>class</code>, <code>title</code>, <code>hidden</code></summary>
+  <p><strong>Description:</strong> Universal attributes used for identification, grouping, tool‑tips, and hiding content.</p>
+  <pre><code>&lt;div id="note" class="warning" title="tooltip"&gt;Visible&lt;/div&gt;
+&lt;p hidden&gt;Hidden text&lt;/p&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <div id="note" class="warning" title="tooltip">Visible</div>
+  <p hidden>Hidden text</p>
+</details>
+
+<details id="B.2"><summary>Editing &amp; direction — <code>contenteditable</code>, <code>dir</code>, <code>translate</code>, <code>spellcheck</code></summary>
+  <p><strong>Description:</strong> Control inline editing, text direction, translation, and spell‑checking.</p>
+  <pre><code>&lt;div contenteditable spellcheck="false"&gt;Edit me&lt;/div&gt;
+&lt;p dir="rtl"&gt;مرحبا&lt;/p&gt;
+&lt;span translate="no"&gt;BrandName&lt;/span&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <div contenteditable spellcheck="false">Edit me</div>
+  <p dir="rtl">(select the edit me text) </p>
+  <span translate="no">BrandName</span>
+</details>
+
+<details id="B.3"><summary>Custom data + micro‑data — <code>data-*</code>, <code>itemscope</code>, <code>itemprop</code></summary>
+  <p><strong>Description:</strong> Attach custom values and semantic metadata without scripting.</p>
+  <pre><code>&lt;article itemscope itemtype="https://schema.org/Answer" data-score="42"&gt;
+  &lt;span itemprop="text"&gt;Forty‑two&lt;/span&gt;
+&lt;/article&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <article itemscope itemtype="https://schema.org/Answer" data-score="42">
+    <span itemprop="text">Forty‑two</span>
+  </article>
+</details>
+
+<details id="B.4"><summary>Boolean attribute truthiness</summary>
+  <p><strong>Description:</strong> Presence means <em>true</em>; absence means <em>false</em>. Extra values are ignored.</p>
+  <pre><code>&lt;input type="checkbox" checked&gt; on
+&lt;input type="checkbox"&gt; off</code></pre>
+  <p><em>Rendered output:</em></p>
+  <input type="checkbox" checked> on
+  <input type="checkbox"> off
+</details>
+
+
+
+<hr>
+<!-- ───────── Navigator (Section C only) ───────── -->
+<h2>Section C · Head Metadata &amp; Resource Hints</h2>
+
+
+
+<!-- ========== Section C · Head Metadata & Resource Hints ========== -->
+<details id="C.1"><summary>&lt;title&gt;</summary>
+  <p><strong>Description:</strong> Sets the page title shown in browser tabs, bookmarks, and search results.</p>
+  <pre><code>&lt;title&gt;My Page&lt;/title&gt;</code></pre>
+  <p><em>Rendered output:</em> Appears in the browser tab / window title.</p>
+</details>
+
+<details id="C.2"><summary>&lt;meta charset&gt; &amp; &lt;meta name="viewport"&gt;</summary>
+  <p><strong>Description:</strong> <code>charset</code> declares UTF‑8; <code>viewport</code> controls mobile layout.</p>
+  <pre><code>&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</code></pre>
+  <p><em>Rendered output:</em> No visible output (metadata only).</p>
+</details>
+
+<details id="C.3"><summary>SEO &amp; Social meta</summary>
+  <p><strong>Description:</strong> Improve search snippets and social previews using description and Open Graph/Twitter tags.</p>
+  <pre><code>&lt;meta name="description" content="Concise page summary."&gt;
+&lt;meta property="og:title" content="My Page"&gt;
+&lt;meta property="og:image" content="https://example.com/cover.jpg"&gt;</code></pre>
+  <p><em>Rendered output:</em> No visible output; search engines/social platforms read these values.</p>
+</details>
+
+<details id="C.4"><summary>Security / Policy meta</summary>
+  <p><strong>Description:</strong> Control browser behaviour (CSP, referrer, refresh redirects, X‑UA‑Compatible for old IE).</p>
+  <pre><code>&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'"&gt;
+&lt;meta name="referrer" content="no-referrer"&gt;
+&lt;meta http-equiv="refresh" content="5;url=https://example.com"&gt;</code></pre>
+  <p><em>Rendered output:</em> Invisible; may trigger redirect or tighten security.</p>
+</details>
+
+<details id="C.5"><summary>Resource link — preload / preconnect / print CSS</summary>
+  <p><strong>Description:</strong> Hint the browser to fetch critical assets early or only for print.</p>
+  <pre><code>&lt;link rel="preload" as="font" href="/fonts/roboto.woff2" type="font/woff2" crossorigin&gt;
+&lt;link rel="preconnect" href="https://cdn.example.com"&gt;
+&lt;link rel="stylesheet" href="print.css" media="print"&gt;</code></pre>
+  <p><em>Rendered output:</em> No visible output; improves loading or applies on print.</p>
+  </details>
+
+<details id="C.6"><summary>Relationship link — canonical / manifest / hreflang</summary>
+  <p><strong>Description:</strong> Declare canonical URL, PWA manifest, or alternate language versions.</p>
+  <pre><code>&lt;link rel="canonical" href="https://example.com/page"&gt;
+&lt;link rel="manifest" href="/site.webmanifest"&gt;
+&lt;link rel="alternate" hreflang="es" href="/es/page"&gt;</code></pre>
+  <p><em>Rendered output:</em> None; informs search engines and browsers.</p>
+</details>
+
+<details id="C.7"><summary>Favicons &amp; touch icons</summary>
+  <p><strong>Description:</strong> Provide icons for browser tabs, bookmarks, and mobile homescreens.</p>
+  <pre><code>&lt;link rel="icon" href="/favicon.ico" sizes="any"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"&gt;</code></pre>
+  <p><em>Rendered output:</em> Icon appears in browser UI (not in-page).</p>
+</details>
+
+<details id="C.8"><summary>JSON‑LD structured data script</summary>
+  <p><strong>Description:</strong> Embed schema.org data using an inert <code>&lt;script type="application/ld+json"&gt;</code>.</p>
+  <pre><code>&lt;script type="application/ld+json"&gt;{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "My Page"
+}&lt;/script&gt;</code></pre>
+  <p><em>Rendered output:</em> None; consumed by search engines.</p>
+</details>
+
+<hr>
+
+
+<!-- ───────── Navigator (Section D only) ───────── -->
+
+<title>HTML Cheat-Sheet — Section D</title>
+</head>
+<body>
+<h2>Section D · Sectioning &amp; Interactive Elements</h2>
+
+<!-- ========== Section D · Sectioning & Interactive Elements ========== -->
+<details id="D.1"><summary>&lt;div&gt; (generic block)</summary>
+  <p><strong>Description:</strong> Generic container with no semantics.</p>
+  <pre><code>&lt;div&gt;Block of text&lt;/div&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <div>Block of text</div>
+</details>
+
+
+<details id="D.2"><summary>&lt;header&gt;</summary>
+  <p><strong>Description:</strong> Introductory content for a document or section.</p>
+  <pre><code>&lt;header&gt;
+  &lt;h1&gt;Site Title&lt;/h1&gt;
+&lt;/header&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <header>
+    <h1>Site Title</h1>
+  </header>
+</details>
+
+<details id="D.3"><summary>&lt;nav&gt;</summary>
+  <p><strong>Description:</strong> Section containing primary navigation links.</p>
+  <pre><code>&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt; | &lt;a href="#"&gt;About&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <nav>
+    <a href="#">Home</a> | <a href="#">About</a>
+  </nav>
+</details>
+
+<details id="D.4"><summary>&lt;main&gt;</summary>
+  <p><strong>Description:</strong> Unique, central content of the page.</p>
+  <pre><code>&lt;main&gt;
+  &lt;p&gt;Main story…&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <main>
+    <p>Main story…</p>
+  </main>
+</details>
+
+<details id="D.5"><summary>&lt;section&gt;</summary>
+  <p><strong>Description:</strong> Thematic grouping of content, typically with a heading.</p>
+  <pre><code>&lt;section&gt;
+  &lt;h2&gt;Features&lt;/h2&gt;
+  &lt;p&gt;Item 1&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <section>
+    <h2>Features</h2>
+    <p>Item 1</p>
+  </section>
+</details>
+
+<details id="D.6"><summary>&lt;article&gt;</summary>
+  <p><strong>Description:</strong> Self‑contained item that could be distributed independently.</p>
+  <pre><code>&lt;article&gt;
+  &lt;h2&gt;Blog Post&lt;/h2&gt;
+  &lt;p&gt;…content…&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <article>
+    <h2>Blog Post</h2>
+    <p>…content…</p>
+  </article>
+</details>
+
+<details id="D.7"><summary>&lt;aside&gt;</summary>
+  <p><strong>Description:</strong> Tangential content such as a sidebar or callout.</p>
+  <pre><code>&lt;aside&gt;Tip: save your work.&lt;/aside&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <aside>Tip: save your work.</aside>
+</details>
+
+<details id="D.8"><summary>&lt;footer&gt;</summary>
+  <p><strong>Description:</strong> Closing content for a document or section.</p>
+  <pre><code>&lt;footer&gt;© 2025&lt;/footer&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <footer>© 2025</footer>
+</details>
+
+<details id="D.9"><summary>&lt;address&gt;</summary>
+  <p><strong>Description:</strong> Contact information block; italic by default in many browsers.</p>
+  <pre><code>&lt;address&gt;
+  Email: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;
+&lt;/address&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <address>
+    Email: <a href="mailto:info@example.com">info@example.com</a>
+  </address>
+</details>
+
+<details id="D.10"><summary>&lt;hgroup&gt; (experimental)</summary>
+  <p><strong>Description:</strong> Wraps multi-level headings as a single heading group (not widely supported).</p>
+  <pre><code>&lt;hgroup&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;h2&gt;Subtitle&lt;/h2&gt;
+&lt;/hgroup&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <hgroup>
+    <h1>Title</h1>
+    <h2>Subtitle</h2>
+  </hgroup>
+</details>
+
+<details id="D.11"><summary>&lt;details&gt; &amp; &lt;summary&gt;</summary>
+  <p><strong>Description:</strong> Native disclosure widget.</p>
+  <pre><code>&lt;details&gt;
+  &lt;summary&gt;More&lt;/summary&gt;
+  Extra content…
+&lt;/details&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <details>
+    <summary>More</summary>
+    Extra content…
+  </details>
+</details>
+
+<details id="D.12"><summary>&lt;dialog open&gt;</summary>
+  <p><strong>Description:</strong> Modal dialog element; <code>open</code> attribute makes it visible without JavaScript.</p>
+  <pre><code>&lt;dialog open&gt;
+  Hello!&lt;br&gt;
+  &lt;button&gt;OK&lt;/button&gt;
+&lt;/dialog&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <dialog open>
+    Hello!<br>
+    <button>OK</button>
+  </dialog>
+</details>
+
+<details id="D.13"><summary>Legacy &lt;menu&gt; (deprecated)</summary>
+  <p><strong>Description:</strong> Old contextual menu; retained for backward compatibility.</p>
+  <pre><code>&lt;menu type="toolbar">
+</code>
+</details>
+
+
+
+<!-- ───────── Navigator (Section E only) ───────── -->
+<title>HTML Cheat-Sheet — Section E</title>
+</head>
+<body>
+
+  <hr>
+ 
+<h2>Section E · Block‑Level Text &amp; Lists</h2>
+
+
+
+<!-- ========== Section E · Block‑Level Text & Lists ========== -->
+<details id="E.1"><summary>Headings &lt;h1&gt;–&lt;h6&gt;</summary>
+  <p><strong>Description:</strong> Six levels of section headings, block‑level by default.</p>
+  <pre><code>&lt;h1&gt;Level 1&lt;/h1&gt;
+&lt;h2&gt;Level 2&lt;/h2&gt;
+…
+&lt;h6&gt;Level 6&lt;/h6&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <h1>Level 1</h1>
+  <h2>Level 2</h2>
+  <h3>Level 3</h3>
+  <h4>Level 4</h4>
+  <h5>Level 5</h5>
+  <h6>Level 6</h6>
+</details>
+
+<details id="E.2"><summary>Paragraph &lt;p&gt;</summary>
+  <p><strong>Description:</strong> The primary block for prose.</p>
+  <pre><code>&lt;p&gt;A plain paragraph.&lt;/p&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <p>A plain paragraph.</p>
+</details>
+
+<details id="E.3"><summary>Lists &lt;ul&gt;, &lt;ol&gt;, &lt;dl&gt;</summary>
+  <p><strong>Description:</strong> Unordered, ordered, and description lists.</p>
+  <pre><code>&lt;ul&gt;&lt;li&gt;Red&lt;/li&gt;&lt;li&gt;Blue&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;One&lt;/li&gt;&lt;li&gt;Two&lt;/li&gt;&lt;/ol&gt;
+&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Markup&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <ul><li>Red</li><li>Blue</li></ul>
+  <ol><li>One</li><li>Two</li></ol>
+  <dl><dt>HTML</dt><dd>Markup</dd></dl>
+</details>
+
+<details id="E.4"><summary>&lt;blockquote&gt; with optional cite</summary>
+  <p><strong>Description:</strong> For long quotations; <code>cite</code> attribute may link source.</p>
+  <pre><code>&lt;blockquote cite="https://example.com"&gt;
+  &lt;p&gt;Quotation text.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <blockquote cite="https://example.com">
+    <p>Quotation text.</p>
+  </blockquote>
+</details>
+
+<details id="E.5"><summary>&lt;pre&gt; preformatted &amp; &lt;code&gt;</summary>
+  <p><strong>Description:</strong> Preserve whitespace and show inline code.</p>
+  <pre><code>&lt;pre&gt;
+line 1
+  line 2 indented
+&lt;/pre&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <pre>
+line 1
+  line 2 indented
 </pre>
+</details>
 
-<!-- Section: Metadata -->
-<h2 id="metadata">Metadata</h2>
-<p><strong>Note:</strong> Elements in the <code>&lt;head&gt;</code>.</p>
-<ul>
-  <li><code>&lt;meta charset="UTF-8"&gt;</code> – character encoding.</li>
-  <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> – responsive design.</li>
-  <li><code>&lt;title&gt;</code> – document title.</li>
-  <li><code>&lt;link rel="icon" href="favicon.ico"&gt;</code> – favicon.</li>
-  <li><code>&lt;link&gt;</code> – external resource link (e.g., CSS).</li>
-  <li><code>&lt;style&gt;</code> – internal CSS.</li>
-  <li><code>&lt;base&gt;</code> – base URL for relative links.</li>
-</ul>
-<pre>
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;My Page&lt;/title&gt;
-  &lt;link rel="icon" href="favicon.ico"&gt;
-  &lt;link rel="stylesheet" href="style.css"&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; }
-  &lt;/style&gt;
-&lt;/head&gt;
-</pre>
+<details id="E.6"><summary>&lt;hr&gt; thematic break</summary>
+  <p><strong>Description:</strong> Horizontal rule indicating a shift of topic; void element.</p>
+  <pre><code>&lt;hr&gt;</code></pre>
+  <p><em>Rendered output:</em> (UA renders a horizontal line below)</p>
+  <hr>
+</details>
 
-<!-- Section: Text Basics -->
-<h2 id="text-basics">Text Basics</h2>
-<p><strong>Note:</strong> Headings and paragraphs.</p>
-<pre>
-&lt;h1&gt;Main Heading&lt;/h1&gt;
-&lt;h2&gt;Subheading&lt;/h2&gt;
-&lt;p&gt;Paragraph text.&lt;/p&gt;
-</pre>
+<details id="E.7"><summary>&lt;br&gt; line break</summary>
+  <p><strong>Description:</strong> Inline void element forcing a line break.</p>
+  <pre><code>First&lt;br&gt;Second</code></pre>
+  <p><em>Rendered output:</em></p>
+  First<br>Second
+</details>
 
-<!-- Section: Inline Text Semantics -->
-<h2 id="inline-text-semantics">Inline Text Semantics</h2>
-<p><strong>Note:</strong> Mark up words or phrases.</p>
-<ul>
-  <li><code>&lt;em&gt;</code> – emphasis</li>
-  <li><code>&lt;strong&gt;</code> – strong importance</li>
-  <li><code>&lt;small&gt;</code> – small print</li>
-  <li><code>&lt;mark&gt;</code> – highlight</li>
-  <li><code>&lt;code&gt;</code> – inline code</li>
-  <li><code>&lt;abbr title="abbreviation"&gt;abbr&lt;/abbr&gt;</code> – abbreviation</li>
-  <li><code>&lt;time datetime="2024-01-01"&gt;</code> – date or time</li>
-</ul>
-<pre>
-&lt;p&gt;
-  Use &lt;em&gt;emphasis&lt;/em&gt; and &lt;strong&gt;strong&lt;/strong&gt; text,
-  &lt;code&gt;code&lt;/code&gt; and &lt;mark&gt;highlight&lt;/mark&gt;.
-&lt;/p&gt;
-</pre>
+<hr>
 
-<!-- Section: Grouping Content -->
-<h2 id="grouping-content">Grouping Content</h2>
-<p><strong>Note:</strong> Block-level elements.</p>
-<ul>
-  <li><code>&lt;div&gt;</code> – generic container.</li>
-  <li><code>&lt;p&gt;</code> – paragraph.</li>
-  <li><code>&lt;hr&gt;</code> – thematic break.</li>
-  <li><code>&lt;blockquote&gt;</code> – quoted section.</li>
-  <li><code>&lt;pre&gt;</code> – preformatted text.</li>
-</ul>
-<pre>
-&lt;div&gt;
-  &lt;blockquote&gt;Quote&lt;/blockquote&gt;
-  &lt;hr /&gt;
-&lt;/div&gt;
-</pre>
 
-<!-- Section: Lists -->
-<h2 id="lists">Lists</h2>
-<p><strong>Note:</strong> Ordered, unordered, and description lists.</p>
-<pre>
-&lt;ul&gt;
+<!-- ───────── Navigator (Section F only) ───────── -->
+<title>HTML Cheat-Sheet — Section F</title>
+</head>
+<body>
+<h2>Section F · Inline Text Semantics</h2>
+
+
+<!-- ========== Section F · Inline Text Semantics ========== -->
+<details id="F.1"><summary>&lt;span&gt; generic inline</summary>
+  <p><strong>Description:</strong> Generic inline container with no semantics.</p>
+  <pre><code>&lt;span&gt;Inline text&lt;/span&gt;</code></pre>
+  <p><em>Rendered output:</em> <span>Inline text</span></p>
+</details>
+
+<details id="F.2"><summary>&lt;em&gt; emphasis &amp; &lt;strong&gt; importance</summary>
+  <p><strong>Description:</strong> <code>&lt;em&gt;</code> indicates stress emphasis; <code>&lt;strong&gt;</code> indicates strong importance.</p>
+  <pre><code>&lt;em&gt;emphasis&lt;/em&gt; and &lt;strong&gt;important&lt;/strong&gt;</code></pre>
+  <p><em>Rendered output:</em> <em>emphasis</em> and <strong>important</strong></p>
+</details>
+
+<details id="F.3"><summary>Presentational &lt;b&gt; &lt;i&gt; &lt;u&gt; &lt;s&gt; &lt;small&gt;</summary>
+  <p><strong>Description:</strong> Presentational inline tags: bold, italic, underline, strike, smaller text.</p>
+  <pre><code>&lt;b&gt;bold&lt;/b&gt; &lt;i&gt;italic&lt;/i&gt; &lt;u&gt;underline&lt;/u&gt; &lt;s&gt;strike&lt;/s&gt; &lt;small&gt;fine print&lt;/small&gt;</code></pre>
+  <p><em>Rendered output:</em> <b>bold</b> <i>italic</i> <u>underline</u> <s>strike</s> <small>fine print</small></p>
+</details>
+
+<details id="F.4"><summary>&lt;del&gt; deletion &amp; &lt;ins&gt; insertion</summary>
+  <p><strong>Description:</strong> Mark edits: deleted text appears struck-through; inserted text underlined.</p>
+  <pre><code>&lt;del&gt;old&lt;/del&gt; &lt;ins&gt;new&lt;/ins&gt;</code></pre>
+  <p><em>Rendered output:</em> <del>old</del> <ins>new</ins></p>
+</details>
+
+<details id="F.5"><summary>&lt;sub&gt; subscript &amp; &lt;sup&gt; superscript</summary>
+  <p><strong>Description:</strong> Offset text lower or higher.</p>
+  <pre><code>H&lt;sub&gt;2&lt;/sub&gt;O and E = mc&lt;sup&gt;2&lt;/sup&gt;</code></pre>
+  <p><em>Rendered output:</em> H<sub>2</sub>O and E = mc<sup>2</sup></p>
+</details>
+
+<details id="F.6"><summary>&lt;abbr&gt; abbreviation</summary>
+  <p><strong>Description:</strong> Expand abbreviation via <code>title</code> attribute.</p>
+  <pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></pre>
+  <p><em>Rendered output:</em> <abbr title="HyperText Markup Language">HTML</abbr></p>
+</details>
+
+<details id="F.7"><summary>&lt;cite&gt; &lt;dfn&gt; &lt;var&gt;</summary>
+  <p><strong>Description:</strong> Citation, term definition, and variable.</p>
+  <pre><code>&lt;cite&gt;Moby Dick&lt;/cite&gt; &lt;dfn&gt;HTML&lt;/dfn&gt; &lt;var&gt;x&lt;/var&gt;</code></pre>
+  <p><em>Rendered output:</em> <cite>Moby Dick</cite> <dfn>HTML</dfn> <var>x</var></p>
+</details>
+
+<details id="F.8"><summary>&lt;code&gt; &lt;kbd&gt; &lt;samp&gt;</summary>
+  <p><strong>Description:</strong> Inline code, user input, and sample output.</p>
+  <pre><code>&lt;code&gt;printf&lt;/code&gt; &lt;kbd&gt;Ctrl+C&lt;/kbd&gt; &lt;samp&gt;OK&lt;/samp&gt;</code></pre>
+  <p><em>Rendered output:</em> <code>printf</code> <kbd>Ctrl+C</kbd> <samp>OK</samp></p>
+</details>
+
+<details id="F.9"><summary>&lt;time&gt; date/time</summary>
+  <p><strong>Description:</strong> Machine‑readable date/time via <code>datetime</code>.</p>
+  <pre><code>&lt;time datetime="2025-07-04"&gt;July 4, 2025&lt;/time&gt;</code></pre>
+  <p><em>Rendered output:</em> <time datetime="2025-07-04">July 4, 2025</time></p>
+</details>
+
+<details id="F.10"><summary>Bidi: <code>dir</code> / &lt;bdo&gt; / &lt;bdi&gt;</summary>
+  <p><strong>Description:</strong> Manage bidirectional text. <code>dir</code> sets direction; <code>&lt;bdo&gt;</code> overrides; <code>&lt;bdi&gt;</code> isolates.</p>
+  <pre><code>&lt;bdo dir="rtl"&gt;hello&lt;/bdo&gt; &lt;bdi&gt;مرحبا&lt;/bdi&gt;</code></pre>
+  <p><em>Rendered output:</em> <bdo dir="rtl">hello</bdo> <bdi>مرحبا</bdi></p>
+</details>
+
+<details id="F.11"><summary>&lt;wbr&gt; word break opportunity</summary>
+  <p><strong>Description:</strong> Suggests a potential line‑break point without forcing it.</p>
+  <pre><code>super&lt;wbr&gt;califragilistic</code></pre>
+  <p><em>Rendered output:</em> super<wbr>califragilistic</p>
+</details>
+
+<details id="F.12"><summary>Ruby annotation</summary>
+  <p><strong>Description:</strong> East‑Asian pronunciation guide: base text with <code>&lt;rt&gt;</code> annotation.</p>
+  <pre><code>&lt;ruby&gt;漢&lt;rt&gt;kan&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+  <p><em>Rendered output:</em> <ruby>漢<rt>kan</rt></ruby></p>
+</details>
+
+<details id="F.13"><summary>&lt;mark&gt; highlight</summary>
+  <p><strong>Description:</strong> Highlight text relevant to current context (e.g., search result).</p>
+  <pre><code>&lt;p&gt;Find &lt;mark&gt;HTML&lt;/mark&gt; specs.&lt;/p&gt;</code></pre>
+  <p><em>Rendered output:</em> <p>Find <mark>HTML</mark> specs.</p></p>
+</details>
+
+<details id="F.14"><summary>&lt;q&gt; inline quotation</summary>
+  <p><strong>Description:</strong> Short, inline quotation; browsers add quotation marks automatically.</p>
+  <pre><code>&lt;q&gt;To be or not.&lt;/q&gt;</code></pre>
+  <p><em>Rendered output:</em> <q>To be or not.</q></p>
+</details>
+
+<details id="F.15"><summary>&lt;data&gt; machine value</summary>
+  <p><strong>Description:</strong> Bind a human‑readable string to a machine‑readable value.</p>
+  <pre><code>&lt;data value="840"&gt;USD&lt;/data&gt;</code></pre>
+  <p><em>Rendered output:</em> <data value="840">USD</data></p>
+</details>
+
+<hr>
+
+<!-- ───────── Navigator (Section G only) ───────── -->
+<title>HTML Cheat-Sheet — Section G</title>
+</head>
+<body>
+<h2>Section G · HTML Tables</h2>
+
+
+
+
+<!-- ========== Section G · Tables ========== -->
+<details id="G.1"><summary>Basic table structure</summary>
+  <p><strong>Description:</strong> Smallest valid table needs <code>&lt;table&gt;</code>, a row <code>&lt;tr&gt;</code>, and data cells <code>&lt;td&gt;</code>.</p>
+  <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;D&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <table border="1">
+    <tr><td>A</td><td>B</td></tr>
+    <tr><td>C</td><td>D</td></tr>
+  </table>
+</details>
+
+<details id="G.2"><summary>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</summary>
+  <p><strong>Description:</strong> Group header, body, and footer rows for semantics and print repeating.</p>
+  <pre><code>&lt;table border="1"&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Ada&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;&lt;td colspan="2"&gt;Total 1&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <table border="1">
+    <thead><tr><th>Name</th><th>Age</th></tr></thead>
+    <tbody><tr><td>Ada</td><td>36</td></tr></tbody>
+    <tfoot><tr><td colspan="2">Total 1</td></tr></tfoot>
+  </table>
+</details>
+
+<details id="G.3"><summary>&lt;caption&gt; and scoped headers</summary>
+  <p><strong>Description:</strong> <code>&lt;caption&gt;</code> gives a table title; <code>&lt;th scope="row/col"&gt;</code> clarifies header range.</p>
+  <pre><code>&lt;table border="1"&gt;
+  &lt;caption&gt;Scores&lt;/caption&gt;
+  &lt;tr&gt;&lt;th scope="col"&gt;Player&lt;/th&gt;&lt;th scope="col"&gt;Pts&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;th scope="row"&gt;Bob&lt;/th&gt;&lt;td&gt;42&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <table border="1">
+    <caption>Scores</caption>
+    <tr><th scope="col">Player</th><th scope="col">Pts</th></tr>
+    <tr><th scope="row">Bob</th><td>42</td></tr>
+  </table>
+</details>
+
+<details id="G.4"><summary>&lt;colgroup&gt; &amp; &lt;col&gt;</summary>
+  <p><strong>Description:</strong> Apply styling/widths to column groups (visual only; here shown with <code>span</code>).</p>
+  <pre><code>&lt;table border="1"&gt;
+  &lt;colgroup&gt;&lt;col span="2" style="background:#eef"&gt;&lt;/colgroup&gt;
+  &lt;tr&gt;&lt;td&gt;X&lt;/td&gt;&lt;td&gt;Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <table border="1">
+    <colgroup><col span="2" style="background:#eef"></colgroup>
+    <tr><td>X</td><td>Y</td></tr>
+  </table>
+</details>
+
+<hr>
+
+<!-- ───────── Navigator (Section H only) ───────── -->
+<title>HTML Cheat-Sheet — Section H</title>
+</head>
+<body>
+<h2>Section H · Form Container &amp; Semantics</h2>
+
+
+<!-- ========== Section H · Form Container & Semantics ========== -->
+<details id="H.1"><summary>&lt;form&gt; container</summary>
+  <p><strong>Description:</strong> Groups interactive controls and submits user data. Key attributes: <code>action</code> (destination URL) and <code>method</code> (<code>get</code>/<code>post</code>).</p>
+  <pre><code>&lt;form action="/search" method="get"&gt;
+  &lt;input name="q"&gt;
+  &lt;button&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <form action="/search" method="get">
+    <input name="q">
+    <button>Search</button>
+  </form>
+</details>
+
+<details id="H.2"><summary>&lt;fieldset&gt; &amp; &lt;legend&gt;</summary>
+  <p><strong>Description:</strong> Visually and semantically group related controls with an optional caption.</p>
+  <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Shipping&lt;/legend&gt;
+  &lt;label&gt;City &lt;input name="city"&gt;&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <fieldset>
+    <legend>Shipping</legend>
+    <label>City <input name="city"></label>
+  </fieldset>
+</details>
+
+<details id="H.3"><summary>&lt;label&gt; association</summary>
+  <p><strong>Description:</strong> Improves accessibility by tying descriptive text to a form control via nesting or <code>for</code>/<code>id</code>.</p>
+  <pre><code>&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input id="email" type="email"&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <label for="email">Email</label>
+  <input id="email" type="email">
+</details>
+<hr>
+
+<!-- ───────── Navigator (Section I only) ───────── -->
+<title>HTML Cheat-Sheet — Section I</title>
+</head>
+<body>
+
+ 
+<h2>Section I · Input Controls &amp; Widgets</h2>
+
+
+
+
+
+<!-- ========== Section I · Input Controls & Widgets ========== -->
+<details id="I.1"><summary>Input type gallery</summary>
+  <p><strong>Description:</strong> Common <code>&lt;input&gt;</code> <code>type</code> attribute values and their native UIs.</p>
+  <pre><code>&lt;input type="text" placeholder="text"&gt;
+&lt;input type="email" placeholder="email"&gt;
+&lt;input type="number" value="5"&gt;
+&lt;input type="date"&gt;
+&lt;input type="range" min="0" max="10" value="3"&gt;
+&lt;input type="checkbox" checked&gt; agree</code></pre>
+  <p><em>Rendered output:</em></p>
+  <input type="text" placeholder="text">
+  <input type="email" placeholder="email">
+  <input type="number" value="5">
+  <input type="date">
+  <input type="range" min="0" max="10" value="3">
+  <label><input type="checkbox" checked> agree</label>
+</details>
+
+<details id="I.2"><summary>Validation attributes</summary>
+  <p><strong>Description:</strong> Built‑in validation via <code>required</code>, <code>pattern</code>, <code>min</code>, <code>max</code>, <code>step</code>.</p>
+  <pre><code>&lt;input type="email" required placeholder="required email"&gt;
+&lt;input type="text" pattern="[A-Za-z]+" placeholder="letters only"&gt;
+&lt;input type="number" min="0" max="100" step="10" value="30"&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <input type="email" required placeholder="required email">
+  <input type="text" pattern="[A-Za-z]+" placeholder="letters only">
+  <input type="number" min="0" max="100" step="10" value="30">
+</details>
+
+<details id="I.3"><summary>Textarea, Select, Datalist</summary>
+  <p><strong>Description:</strong> Multi‑line input, dropdown, and typed suggestions.</p>
+  <pre><code>&lt;textarea rows="2" cols="20" placeholder="comments"&gt;&lt;/textarea&gt;
+
+&lt;select&gt;
+  &lt;option&gt;Red&lt;/option&gt;
+  &lt;option&gt;Green&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;input list="browsers" placeholder="choose"&gt;
+&lt;datalist id="browsers"&gt;
+  &lt;option value="Firefox"&gt;
+  &lt;option value="Chrome"&gt;
+&lt;/datalist&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <textarea rows="2" cols="20" placeholder="comments"></textarea>
+  <br>
+  <select>
+    <option>Red</option>
+    <option>Green</option>
+  </select>
+  <br>
+  <input list="browsers" placeholder="choose">
+  <datalist id="browsers">
+    <option value="Firefox">
+    <option value="Chrome">
+  </datalist>
+</details>
+
+<details id="I.4"><summary>&lt;progress&gt; &amp; &lt;meter&gt;</summary>
+  <p><strong>Description:</strong> Native status indicators: task progress and scalar measurements.</p>
+  <pre><code>&lt;progress value="30" max="100"&gt;30%&lt;/progress&gt;
+&lt;meter value="0.7"&gt;70%&lt;/meter&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <progress value="30" max="100">30%</progress>
+  <meter value="0.7">70%</meter>
+</details>
+<hr>
+
+
+<!-- ───────── Navigator (Section J only) ───────── -->
+<title>HTML Cheat-Sheet — Section J</title>
+</head>
+<body>
+<h2>Section J · Media &amp; Embeds</h2>
+
+
+
+<!-- ========== Section J · Media & Embeds ========== -->
+<details id="J.1"><summary>&lt;img&gt; (replaced element)</summary>
+  <p><strong>Description:</strong> Embeds an image; <code>alt</code> text is required for accessibility.</p>
+  <pre><code>&lt;img src="https://via.placeholder.com/80" alt="placeholder"&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <img src="https://via.placeholder.com/80" alt="placeholder">
+</details>
+
+<details id="J.2"><summary>&lt;picture&gt; with &lt;source&gt; for responsive images</summary>
+  <p><strong>Description:</strong> Deliver different images based on viewport or format support.</p>
+  <pre><code>&lt;picture&gt;
+  &lt;source srcset="small.jpg" media="(max-width:600px)"&gt;
+  &lt;img src="large.jpg" alt="example"&gt;
+&lt;/picture&gt;</code></pre>
+  <p><em>Rendered output:</em> (image chosen by media query)</p>
+  <picture>
+    <source srcset="https://via.placeholder.com/100" media="(max-width:600px)">
+    <img src="https://via.placeholder.com/160" alt="example">
+  </picture>
+</details>
+
+<details id="J.3"><summary>&lt;figure&gt; &amp; &lt;figcaption&gt;</summary>
+  <p><strong>Description:</strong> Self‑contained media with an optional caption.</p>
+  <pre><code>&lt;figure&gt;
+  &lt;img src="pic.jpg" alt=""&gt;
+  &lt;figcaption&gt;A caption&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <figure>
+    <img src="https://via.placeholder.com/120" alt="">
+    <figcaption>A caption</figcaption>
+  </figure>
+</details>
+
+<details id="J.4"><summary>&lt;audio&gt; with controls</summary>
+  <p><strong>Description:</strong> Embed audio; <code>controls</code> shows native player.</p>
+  <pre><code>&lt;audio controls src="audio.mp3"&gt;&lt;/audio&gt;</code></pre>
+  <p><em>Rendered output:</em> (browser audio UI)</p>
+  <audio controls src=""></audio>
+</details>
+
+<details id="J.5"><summary>&lt;video&gt; with controls</summary>
+  <p><strong>Description:</strong> Embed video; <code>controls</code> displays playback UI.</p>
+  <pre><code>&lt;video controls width="200" src="video.mp4"&gt;&lt;/video&gt;</code></pre>
+  <p><em>Rendered output:</em> (browser video UI)</p>
+  <video controls width="200" src=""></video>
+</details>
+
+<details id="J.6"><summary>&lt;iframe&gt;, &lt;embed&gt;, &lt;object&gt;</summary>
+  <p><strong>Description:</strong> Embed external resources like webpages, PDFs, or plugins.</p>
+  <pre><code>&lt;iframe src="https://example.com" width="200" height="80"&gt;&lt;/iframe&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <iframe src="about:blank" width="200" height="80"></iframe>
+</details>
+
+<details id="J.7"><summary>Image map: &lt;map&gt; &amp; &lt;area&gt;</summary>
+  <p><strong>Description:</strong> Define clickable regions on an image.</p>
+  <pre><code>&lt;img src="planets.jpg" usemap="#m" alt=""&gt;
+&lt;map name="m"&gt;
+  &lt;area shape="circle" coords="90,60,30" href="#Mercury" alt="Mercury"&gt;
+&lt;/map&gt;</code></pre>
+  <p><em>Rendered output:</em> (hotspots invisible)</p>
+</details>
+
+<details id="J.8"><summary>Inline SVG</summary>
+  <p><strong>Description:</strong> Vector graphics directly in markup.</p>
+  <pre><code>&lt;svg width="60" height="20" role="img" aria-labelledby="t"&gt;
+  &lt;title id="t"&gt;Red bar&lt;/title&gt;
+  &lt;rect width="60" height="20" fill="red"&gt;&lt;/rect&gt;
+&lt;/svg&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <svg width="60" height="20" role="img" aria-labelledby="t"><title id="t">Red bar</title><rect width="60" height="20" fill="red"></rect></svg>
+</details>
+
+<details id="J.9"><summary>Inline MathML</summary>
+  <p><strong>Description:</strong> Mathematical notation; limited browser support.</p>
+  <pre><code>&lt;math&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/math&gt;</code></pre>
+  <p><em>Rendered output:</em> <math><mi>x</mi><mo>=</mo><mn>5</mn></math></p>
+</details>
+
+<details id="J.10"><summary>&lt;canvas&gt; static fallback</summary>
+  <p><strong>Description:</strong> Bitmap drawing surface; static fallback shows when JS disabled.</p>
+  <pre><code>&lt;canvas width="80" height="20"&gt;Fallback text&lt;/canvas&gt;</code></pre>
+  <p><em>Rendered output:</em> <canvas width="80" height="20">Fallback text</canvas></p>
+</details>
+<hr>
+
+<!-- ───────── Navigator (Section K only) ───────── -->
+<title>HTML Cheat-Sheet — Section K</title>
+</head>
+<body>
+<h2>Section K · Accessibility Quick‑Ref</h2>
+
+
+
+
+<!-- ========== Section K · Accessibility Quick‑Ref ========== -->
+<details id="K.1"><summary>Landmark roles recap</summary>
+  <p><strong>Description:</strong> ARIA landmark roles help screen‑reader users navigate quickly.</p>
+  <pre><code>&lt;header role="banner"&gt;…&lt;/header&gt;
+&lt;nav role="navigation"&gt;…&lt;/nav&gt;
+&lt;main role="main"&gt;…&lt;/main&gt;
+&lt;aside role="complementary"&gt;…&lt;/aside&gt;
+&lt;footer role="contentinfo"&gt;…&lt;/footer&gt;</code></pre>
+  <p><em>Rendered output:</em> (No visual change; landmarks exposed to assistive tech)</p>
+</details>
+
+<details id="K.2"><summary><code>role</code> &amp; common <code>aria‑*</code> attributes</summary>
+  <p><strong>Description:</strong> Convey widget roles and states without JavaScript.</p>
+  <pre><code>&lt;button aria‑pressed="false" role="button"&gt;Toggle&lt;/button&gt;
+&lt;ul role="list" aria‑label="Steps"&gt;…&lt;/ul&gt;</code></pre>
+  <p><em>Rendered output:</em> <button aria-pressed="false" role="button">Toggle</button></p>
+</details>
+
+<details id="K.3"><summary>Alt‑text rules &amp; skip‑link</summary>
+  <p><strong>Description:</strong> Provide meaningful <code>alt</code> for images; add invisible skip‑link for keyboard users.</p>
+  <pre><code>&lt;a href="#main" class="visually‑hidden focusable"&gt;Skip to content&lt;/a&gt;
+&lt;img src="logo.png" alt="ACME Corp logo"&gt;</code></pre>
+  <p><em>Rendered output:</em> Skip‑link is visible on focus; image shows normally.</p>
+</details>
+
+<details id="K.4"><summary>Keyboard focus tips (<code>tabindex</code>, <code>accesskey</code>)</summary>
+  <p><strong>Description:</strong> Manage tab order and shortcut keys.</p>
+  <pre><code>&lt;div tabindex="0"&gt;Focusable region&lt;/div&gt;
+&lt;button accesskey="s"&gt;Save (Alt+S)&lt;/button&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <div tabindex="0">Focusable region</div>
+  <button accesskey="s">Save (Alt+S)</button>
+</details>
+
+<hr>
+
+<!-- ───────── Navigator (Section L only) ───────── -->
+<title>HTML Cheat-Sheet — Section L</title>
+</head>
+<body>
+<h2>Section L · Performance &amp; Formatting Guidelines</h2>
+
+
+
+<!-- ========== Section L · Performance & Formatting ========== -->
+<details id="L.1"><summary>Lazy‑loading images &amp; print CSS hints</summary>
+  <p><strong>Description:</strong> Improve performance with <code>loading="lazy"</code>; target print styles via <code>media="print"</code>. Validate markup with online validators.</p>
+  <pre><code>&lt;img src="hero.jpg" alt="" loading="lazy"&gt;
+&lt;link rel="stylesheet" href="print.css" media="print"&gt;</code></pre>
+  <p><em>Rendered output:</em> (image defers until in‑view; stylesheet applies only when printing)</p>
+</details>
+
+<details id="L.2"><summary>Indentation &amp; whitespace</summary>
+  <p><strong>Description:</strong> Two‑space (or tab) indentation keeps markup readable. Collapse redundant spaces in inline content.</p>
+  <pre><code>&lt;ul&gt;
   &lt;li&gt;Item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-  &lt;li&gt;First&lt;/li&gt;
-&lt;/ol&gt;
-&lt;dl&gt;
-  &lt;dt&gt;Term&lt;/dt&gt;
-  &lt;dd&gt;Definition&lt;/dd&gt;
-&lt;/dl&gt;
-</pre>
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  <p><em>Rendered output:</em> Formatting has no visual effect—improves source readability.</p>
+</details>
 
-<!-- Section: Links -->
-<h2 id="links">Links</h2>
-<p><strong>Note:</strong> Hyperlinks and anchors.</p>
-<pre>
-&lt;a href="https://example.com" target="_blank"&gt;Example&lt;/a&gt; <!-- External link -->
-&lt;a id="top"&gt;&lt;/a&gt; &lt;a href="#top"&gt;Internal link&lt;/a&gt;
-</pre>
+<details id="L.3"><summary>Attribute order &amp; consistent quoting</summary>
+  <p><strong>Description:</strong> Place structural attributes first (<code>id</code>, <code>class</code>), followed by behaviour (<code>type</code>, <code>href</code>); always quote values with double‑quotes.</p>
+  <pre><code>&lt;a id="home" class="btn" href="/" role="button"&gt;Home&lt;/a&gt;</code></pre>
+</details>
 
-<!-- Section: Images -->
-<h2 id="images">Images</h2>
-<p><strong>Note:</strong> Embedding images.</p>
-<pre>
-&lt;img src="path/to/image.jpg" alt="description" width="200" height="100" /&gt;
-</pre>
+<details id="L.4"><summary>Lower‑case element/attribute names</summary>
+  <p><strong>Description:</strong> HTML is case‑insensitive; lower‑case improves diff hygiene.</p>
+  <pre><code>&lt;section id="intro"&gt;…&lt;/section&gt;</code></pre>
+</details>
 
-<!-- Section: Audio and Video -->
-<h2 id="audio-and-video">Audio and Video</h2>
-<p><strong>Note:</strong> Media elements.</p>
-<pre>
-&lt;audio controls&gt;
-  &lt;source src="sound.mp3" type="audio/mpeg"&gt;
-&lt;/audio&gt;
-&lt;video controls width="320" height="240"&gt;
-  &lt;source src="movie.mp4" type="video/mp4"&gt;
-&lt;/video&gt;
-</pre>
+<details id="L.5"><summary>Line length &amp; one‑tag‑per‑line</summary>
+  <p><strong>Description:</strong> Limit lines to ~80‑100 chars; break attributes on new lines in complex tags.</p>
+  <pre><code>&lt;img
+  src="banner.jpg"
+  alt="decorative banner"
+  loading="lazy"&gt;</code></pre>
+</details>
 
-<!-- Section: Tables -->
-<h2 id="tables">Tables</h2>
-<p><strong>Note:</strong> Displaying tabular data.</p>
-<pre>
-&lt;table&gt;
-  &lt;caption&gt;Data&lt;/caption&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;&lt;td&gt;Footer&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;
-</pre>
+<details id="L.6"><summary>Void‑element rule</summary>
+  <p><strong>Description:</strong> Void elements (e.g., <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>) never get a closing tag.</p>
+  <pre><code>&lt;br&gt; Correct
+&lt;br /&gt; XHTML‑style (allowed but verbose)</code></pre>
+</details>
 
-<!-- Section: Forms -->
-<h2 id="forms">Forms</h2>
-<p><strong>Note:</strong> Collecting user input.</p>
-<pre>
-&lt;form action="/submit" method="post"&gt;
-  &lt;fieldset&gt;
-    &lt;legend&gt;Contact&lt;/legend&gt;
-    &lt;label for="name"&gt;Name&lt;/label&gt;
-    &lt;input type="text" id="name" name="name" required&gt;
-    &lt;input type="checkbox" id="subscribe" name="subscribe"&gt; Subscribe
-    &lt;input type="file" name="file"&gt;
-    &lt;textarea name="message"&gt;&lt;/textarea&gt;
-    &lt;select name="options"&gt;
-      &lt;option value="one"&gt;One&lt;/option&gt;
-    &lt;/select&gt;
-    &lt;input type="submit" value="Send"&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;
-</pre>
-<ul>
-  <li>Common controls: <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>, <code>&lt;label&gt;</code></li>
-</ul>
+<details id="L.7"><summary>Minimal markup (omit redundant attrs)</summary>
+  <p><strong>Description:</strong> Skip default values like <code>type="text"</code> on <code>&lt;input&gt;</code> to reduce bytes.</p>
+  <pre><code>&lt;input name="q"&gt; &lt;!-- shorter than input type="text" --&gt;</code></pre>
+</details>
 
-<!-- Section: Semantic Elements -->
-<h2 id="semantic-elements">Semantic Elements</h2>
-<p><strong>Note:</strong> Meaningful page structure.</p>
-<ul>
-  <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
-  <li><code>&lt;figure&gt;</code> with <code>&lt;figcaption&gt;</code></li>
-</ul>
-<pre>
-&lt;header&gt;Header&lt;/header&gt;
-&lt;nav&gt;Links&lt;/nav&gt;
-&lt;main&gt;Content&lt;/main&gt;
-&lt;footer&gt;Footer&lt;/footer&gt;
-</pre>
+<details id="L.8"><summary>Comment banners</summary>
+  <p><strong>Description:</strong> Use clear, concise HTML comments for section separation—avoid over‑decorated ASCII art.</p>
+  <pre><code>&lt;!-- ── Features ── --&gt;</code></pre>
+</details>
 
-<!-- Section: Embedded Content -->
-<h2 id="embedded-content">Embedded Content</h2>
-<p><strong>Note:</strong> External resources.</p>
-<pre>
-&lt;iframe src="https://example.com" title="Example"&gt;&lt;/iframe&gt;
-&lt;embed src="file.swf"&gt;
-&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;
-</pre>
+<details id="L.9"><summary>Accessible naming in samples</summary>
+  <p><strong>Description:</strong> Examples should follow best practice: meaningful <code>alt</code>, ARIA labels, etc.</p>
+  <pre><code>&lt;button aria-label="Close dialog"&gt;×&lt;/button&gt;</code></pre>
+  <p><em>Rendered output:</em> <button aria-label="Close dialog">×</button></p>
+</details>
 
-<!-- Section: Other Useful HTML5 Elements -->
-<h2 id="html5-elements">Other Useful HTML5 Elements</h2>
-<ul>
-  <li><code>&lt;details&gt;</code> — Disclosure widget.</li>
-  <li><code>&lt;summary&gt;</code> — Summary for details.</li>
-  <li><code>&lt;dialog&gt;</code> — Dialog box/modal.</li>
-  <li><code>&lt;template&gt;</code> — Client-side template.</li>
-</ul>
-<pre>
-&lt;details&gt;
-  &lt;summary&gt;More info&lt;/summary&gt;
-  Extra details here.
-&lt;/details&gt;
+<hr>
 
-&lt;dialog open&gt;Dialog content&lt;/dialog&gt;
-</pre>
+<!-- ───────── Navigator (Section M only) ───────── -->
+<title>HTML Cheat-Sheet — Section M</title>
+</head>
+<body>
+<h2>Section M · Email‑Safe Legacy Tags</h2>
 
-<!-- Section: Scripting -->
-<h2 id="scripting">Scripting</h2>
-<p><strong>Note:</strong> Adding JavaScript. Example only—no scripts run here.</p>
-<pre>
+
+<!-- ========== Section M · Email-Safe Legacy ========== -->
+<details id="M.1"><summary>Email‑compatible markup tips</summary>
+  <p><strong>Description:</strong> Many email clients support only a subset of HTML 4. Use table‑based layouts, inline <code>style</code>, and avoid modern tags.</p>
+  <pre><code>&lt;table role="presentation" width="100%" cellpadding="0" cellspacing="0"&gt;
+  &lt;tr&gt;
+    &lt;td align="center" bgcolor="#f4f4f4" style="font-family:Arial, sans-serif; font-size:14px;"&gt;
+      Hello, world!
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  <p><em>Rendered output:</em></p>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" bgcolor="#f4f4f4" style="font-family:Arial, sans-serif; font-size:14px;">
+        Hello, world!
+      </td>
+    </tr>
+  </table>
+</details>
+
+<hr>
+
+
+
+<!-- ───────── Navigator (Section N only) ───────── -->
+<title>HTML Cheat-Sheet — Section N</title>
+</head>
+<body>
+<h2>Section N · Web Components Essentials</h2>
+
+
+<!-- ========== Section N · Web Components Essentials ========== -->
+<details id="N.1"><summary>&lt;template&gt;, &lt;slot&gt; and Shadow DOM basics</summary>
+  <p><strong>Description:</strong> <code>&lt;template&gt;</code> stores inert markup; Shadow DOM encapsulates style/markup; <code>&lt;slot&gt;</code> defines insertion points for light‑DOM content.</p>
+  <pre><code>&lt;template id="card-tmpl"&gt;
+  &lt;style&gt;.wrapper{border:1px solid #ccc;padding:8px;}&lt;/style&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;slot name="content"&gt;Fallback&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
 &lt;script&gt;
-  console.log("Hello");
+  class CardElement extends HTMLElement {
+    constructor(){super();
+      const t = document.getElementById('card-tmpl').content.cloneNode(true);
+      this.attachShadow({mode:'open'}).append(t);
+    }
+  }
+  customElements.define('x-card', CardElement);
 &lt;/script&gt;
-</pre>
 
-<!-- Section: Global Attributes -->
-<h2 id="global-attributes">Global Attributes</h2>
-<p><strong>Note:</strong> Attributes usable on most elements.</p>
-<ul>
-  <li><code>id</code>, <code>class</code>, <code>style</code> (inline CSS), <code>title</code></li>
-  <li><code>hidden</code>, <code>tabindex</code>, <code>accesskey</code>, <code>draggable</code></li>
-  <li><code>data-*</code> custom data attributes</li>
-</ul>
-<pre>
-&lt;div id="main" class="box" data-info="sample"&gt;
-  Content
-&lt;/div&gt;
-</pre>
+&lt;x-card&gt;&lt;p slot="content"&gt;Hello&lt;/p&gt;&lt;/x-card&gt;</code></pre>
+  <p><em>Rendered output:</em> (requires JS; without it, nothing shows)</p>
+</details>
 
-<!-- Section: Accessibility -->
-<h2 id="accessibility">Accessibility</h2>
-<p><strong>Note:</strong> ARIA and best practices.</p>
-<ul>
-  <li>Use semantic elements for structure.</li>
-  <li><code>alt</code> text on images.</li>
-  <li>ARIA roles: <code>role="navigation"</code>, etc.</li>
-  <li>Label form controls with <code>&lt;label&gt;</code>.</li>
-  <li>Use <code>aria-label</code>, <code>aria-labelledby</code>, <code>aria-describedby</code> for screen readers.</li>
-  <li>Keyboard navigation: <code>tabindex</code>, <code>accesskey</code>.</li>
-  <li>Ensure color contrast and visible focus states.</li>
-</ul>
-<pre>
-&lt;nav role="navigation" aria-label="Main menu"&gt;Menu&lt;/nav&gt;
-&lt;form&gt;
-  &lt;label for="email"&gt;Email&lt;/label&gt;
-  &lt;input id="email" type="email" aria-describedby="emailHelp"&gt;
-  &lt;small id="emailHelp"&gt;We'll never share your email.&lt;/small&gt;
-&lt;/form&gt;
-</pre>
+<details id="N.2"><summary>Autonomous vs. customized built‑in elements</summary>
+  <p><strong>Description:</strong> Define new tags (<em>autonomous</em>) or extend built‑ins with <code>is</code> (<em>customized</em>).</p>
+  <pre><code>&lt;script&gt;
+  // autonomous
+  class FancyBox extends HTMLElement {connectedCallback(){this.innerHTML='★ '+this.textContent}}
+  customElements.define('fancy-box', FancyBox);
 
-<!-- Section: Best Practices -->
-<h2 id="best-practices">Best Practices</h2>
-<p><strong>Note:</strong> General tips.</p>
-<ul>
-  <li>Keep markup clean and well-indented.</li>
-  <li>Use semantic elements for clarity.</li>
-  <li>Include <code>lang</code> attribute on <code>&lt;html&gt;</code>.</li>
-  <li>Avoid deprecated tags like <code>&lt;font&gt;</code>.</li>
-</ul>
-<pre>
-&lt;html lang="en"&gt;
-  &lt;body&gt;
-    &lt;p&gt;Clean code&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+  // customized built‑in
+  class FancyButton extends HTMLButtonElement {connectedCallback(){this.style.borderRadius='12px';}}
+  customElements.define('fancy-button', FancyButton, {extends:'button'});
+&lt;/script&gt;
 
-<!-- Section: Deprecated Tags -->
-<h2 id="deprecated">Deprecated Tags</h2>
-<ul>
-  <li><code>&lt;font&gt;</code> (use CSS for styling)</li>
-  <li><code>&lt;center&gt;</code> (use <code>text-align: center;</code> in CSS)</li>
-  <li><code>&lt;bgsound&gt;</code> (use <code>&lt;audio&gt;</code> instead)</li>
-</ul>
+&lt;fancy-box&gt;Web&nbsp;Comp&lt;/fancy-box&gt;
+&lt;button is="fancy-button"&gt;Click&lt;/button&gt;</code></pre>
+  <p><em>Rendered output:</em> (requires JS; placeholders visible if script blocked)</p>
+</details>
 
-<!-- Section: Reference Links -->
-<h2 id="reference-links">Reference Links</h2>
-<p><strong>Note:</strong> Further reading (open in new tabs).</p>
-<ul>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
-  <li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard</a></li>
-</ul>
+<hr>
+<hr>
+
+<div>
+  <span id="scrolling-text">Loading copyright info...</span>
+</div>
+
+<script>
+  function updateCopyright() {
+    const now = new Date();
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+    const formattedTime = now.toLocaleString('en-US', options);
+    const output = `All Rights Reserved | Copyright © ${formattedTime} Johnathon Morris`;
+    document.getElementById("scrolling-text").innerText = output;
+  }
+
+  updateCopyright();
+  setInterval(updateCopyright, 1000);
+</script>
 
 </body>
 </html>
