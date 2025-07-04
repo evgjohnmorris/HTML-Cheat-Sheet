@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Cheat Sheet</title>
+</head>
+<body>
+<h1>HTML Cheat Sheet</h1>
+<!-- Section: Introduction -->
+<h2>Introduction</h2>
+<p>This page covers the key elements of HTML and HTML5 using pure markup. Each section lists core tags with short explanations.</p>
+
+<!-- Section: Document Structure -->
+<h2>Document Structure</h2>
+<p><strong>Note:</strong> Basic layout of an HTML document.</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- content --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<!-- Section: Metadata -->
+<h2>Metadata</h2>
+<p><strong>Note:</strong> Elements in the <code>&lt;head&gt;</code>.</p>
+<ul>
+<li><code>&lt;meta charset="utf-8"&gt;</code> &ndash; character encoding.</li>
+<li><code>&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</code></li>
+<li><code>&lt;title&gt;</code> &ndash; document title.</li>
+<li><code>&lt;link&gt;</code> &ndash; external resource link.</li>
+<li><code>&lt;style&gt;</code> &ndash; internal CSS (omitted here).</li>
+<li><code>&lt;base&gt;</code> &ndash; base URL for relative links.</li>
+</ul>
+
+<!-- Section: Text Basics -->
+<h2>Text Basics</h2>
+<p><strong>Note:</strong> Headings and paragraphs.</p>
+<pre>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;p&gt;Paragraph text.&lt;/p&gt;</pre>
+
+<!-- Section: Inline Text Semantics -->
+<h2>Inline Text Semantics</h2>
+<p><strong>Note:</strong> Mark up words or phrases.</p>
+<ul>
+<li><code>&lt;em&gt;</code> emphasis</li>
+<li><code>&lt;strong&gt;</code> strong importance</li>
+<li><code>&lt;small&gt;</code> small print</li>
+<li><code>&lt;mark&gt;</code> highlight</li>
+<li><code>&lt;code&gt;</code> inline code</li>
+<li><code>&lt;abbr title="abbreviation"&gt;abbr&lt;/abbr&gt;</code></li>
+<li><code>&lt;time datetime="2024-01-01"&gt;</code> date or time</li>
+</ul>
+
+<!-- Section: Grouping Content -->
+<h2>Grouping Content</h2>
+<p><strong>Note:</strong> Block-level elements.</p>
+<ul>
+<li><code>&lt;div&gt;</code> generic container.</li>
+<li><code>&lt;p&gt;</code> paragraph.</li>
+<li><code>&lt;hr&gt;</code> thematic break.</li>
+<li><code>&lt;blockquote&gt;</code> quoted section.</li>
+<li><code>&lt;pre&gt;</code> preformatted text.</li>
+</ul>
+
+<!-- Section: Lists -->
+<h2>Lists</h2>
+<p><strong>Note:</strong> Ordered, unordered, and description lists.</p>
+<pre>&lt;ul&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+&lt;/ol&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Term&lt;/dt&gt;
+  &lt;dd&gt;Definition&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+
+<!-- Section: Links -->
+<h2>Links</h2>
+<p><strong>Note:</strong> Hyperlinks and anchors.</p>
+<pre>&lt;a href="https://example.com" target="_blank"&gt;Example&lt;/a&gt;
+&lt;a id="top"&gt;&lt;/a&gt; &lt;a href="#top"&gt;Internal link&lt;/a&gt;</pre>
+
+<!-- Section: Images -->
+<h2>Images</h2>
+<p><strong>Note:</strong> Embedding images.</p>
+<pre>&lt;img src="path/to/image.jpg" alt="description" width="200" height="100"&gt;</pre>
+
+<!-- Section: Audio and Video -->
+<h2>Audio and Video</h2>
+<p><strong>Note:</strong> Media elements.</p>
+<pre>&lt;audio controls&gt;
+  &lt;source src="sound.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+&lt;video controls width="320" height="240"&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</pre>
+
+<!-- Section: Tables -->
+<h2>Tables</h2>
+<p><strong>Note:</strong> Displaying tabular data.</p>
+<pre>&lt;table&gt;
+  &lt;caption&gt;Data&lt;/caption&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+&lt;/table&gt;</pre>
+
+<!-- Section: Forms -->
+<h2>Forms</h2>
+<p><strong>Note:</strong> Collecting user input.</p>
+<pre>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;</pre>
+<ul>
+<li>Common controls: <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code></li>
+</ul>
+
+<!-- Section: Semantic Elements -->
+<h2>Semantic Elements</h2>
+<p><strong>Note:</strong> Meaningful page structure.</p>
+<ul>
+<li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
+<li><code>&lt;figure&gt;</code> with <code>&lt;figcaption&gt;</code></li>
+</ul>
+
+<!-- Section: Embedded Content -->
+<h2>Embedded Content</h2>
+<p><strong>Note:</strong> External resources.</p>
+<pre>&lt;iframe src="https://example.com" title="Example"&gt;&lt;/iframe&gt;
+&lt;embed src="file.swf"&gt;
+&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;</pre>
+
+<!-- Section: Scripting -->
+<h2>Scripting</h2>
+<p><strong>Note:</strong> Adding JavaScript. Example only&mdash;no scripts run here.</p>
+<pre>&lt;script&gt;
+  console.log('Hello');
+&lt;/script&gt;</pre>
+
+<!-- Section: Global Attributes -->
+<h2>Global Attributes</h2>
+<p><strong>Note:</strong> Attributes usable on most elements.</p>
+<ul>
+<li><code>id</code>, <code>class</code>, <code>style</code> (inline CSS), <code>title</code></li>
+<li><code>hidden</code>, <code>tabindex</code>, <code>accesskey</code>, <code>draggable</code></li>
+<li><code>data-*</code> custom data attributes</li>
+</ul>
+
+<!-- Section: Accessibility -->
+<h2>Accessibility</h2>
+<p><strong>Note:</strong> ARIA and best practices.</p>
+<ul>
+<li>Use semantic elements for structure.</li>
+<li><code>alt</code> text on images.</li>
+<li>ARIA roles: <code>role="navigation"</code>, etc.</li>
+<li>Label form controls with <code>&lt;label&gt;</code>.</li>
+</ul>
+
+<!-- Section: Best Practices -->
+<h2>Best Practices</h2>
+<p><strong>Note:</strong> General tips.</p>
+<ul>
+<li>Keep markup clean and well-indented.</li>
+<li>Use semantic elements for clarity.</li>
+<li>Include <code>lang</code> attribute on <code>&lt;html&gt;</code>.</li>
+<li>Avoid deprecated tags like <code>&lt;font&gt;</code>.</li>
+</ul>
+
+<!-- Section: Reference Links -->
+<h2>Reference Links</h2>
+<p><strong>Note:</strong> Further reading (open in new tabs).</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+<li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard</a></li>
+</ul>
+
+</body>
+</html>
