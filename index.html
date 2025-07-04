@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>HTML Cheat Sheet</title>
+  <meta charset="UTF-8">
+  <title>HTML Cheat Sheet</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    nav ul { list-style: none; padding: 0; }
+    nav ul li { margin-bottom: 0.25em; }
+    pre { background: #f4f4f4; padding: 1em; overflow-x: auto; }
+    h2 { margin-top: 2em; }
+    code { background: #eee; padding: 0.2em 0.4em; border-radius: 3px; }
+  </style>
 </head>
 <body>
 <h1>HTML Cheat Sheet</h1>
+
+<!-- Table of Contents -->
+<nav>
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#document-structure">Document Structure</a></li>
+    <li><a href="#metadata">Metadata</a></li>
+    <li><a href="#text-basics">Text Basics</a></li>
+    <li><a href="#inline-text-semantics">Inline Text Semantics</a></li>
+    <li><a href="#grouping-content">Grouping Content</a></li>
+    <li><a href="#lists">Lists</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a href="#images">Images</a></li>
+    <li><a href="#audio-and-video">Audio and Video</a></li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#forms">Forms</a></li>
+    <li><a href="#semantic-elements">Semantic Elements</a></li>
+    <li><a href="#embedded-content">Embedded Content</a></li>
+    <li><a href="#html5-elements">Other Useful HTML5 Elements</a></li>
+    <li><a href="#scripting">Scripting</a></li>
+    <li><a href="#global-attributes">Global Attributes</a></li>
+    <li><a href="#accessibility">Accessibility</a></li>
+    <li><a href="#best-practices">Best Practices</a></li>
+    <li><a href="#deprecated">Deprecated Tags</a></li>
+    <li><a href="#reference-links">Reference Links</a></li>
+  </ul>
+</nav>
+
 <!-- Section: Introduction -->
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>This page covers the key elements of HTML and HTML5 using pure markup. Each section lists core tags with short explanations.</p>
 
 <!-- Section: Document Structure -->
-<h2>Document Structure</h2>
+<h2 id="document-structure">Document Structure</h2>
 <p><strong>Note:</strong> Basic layout of an HTML document.</p>
-<pre>&lt;!DOCTYPE html&gt;
+<pre>
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -22,68 +62,83 @@
   &lt;body&gt;
     &lt;!-- content --&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;
+</pre>
 
 <!-- Section: Metadata -->
-<h2>Metadata</h2>
+<h2 id="metadata">Metadata</h2>
 <p><strong>Note:</strong> Elements in the <code>&lt;head&gt;</code>.</p>
 <ul>
-<li><code>&lt;meta charset="utf-8"&gt;</code> &ndash; character encoding.</li>
-<li><code>&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</code></li>
-<li><code>&lt;title&gt;</code> &ndash; document title.</li>
-<li><code>&lt;link&gt;</code> &ndash; external resource link.</li>
-<li><code>&lt;style&gt;</code> &ndash; internal CSS (omitted here).</li>
-<li><code>&lt;base&gt;</code> &ndash; base URL for relative links.</li>
+  <li><code>&lt;meta charset="UTF-8"&gt;</code> – character encoding.</li>
+  <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> – responsive design.</li>
+  <li><code>&lt;title&gt;</code> – document title.</li>
+  <li><code>&lt;link rel="icon" href="favicon.ico"&gt;</code> – favicon.</li>
+  <li><code>&lt;link&gt;</code> – external resource link (e.g., CSS).</li>
+  <li><code>&lt;style&gt;</code> – internal CSS.</li>
+  <li><code>&lt;base&gt;</code> – base URL for relative links.</li>
 </ul>
-
-<pre>&lt;head&gt;
+<pre>
+&lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;title&gt;My Page&lt;/title&gt;
+  &lt;link rel="icon" href="favicon.ico"&gt;
   &lt;link rel="stylesheet" href="style.css"&gt;
-&lt;/head&gt;</pre>
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; }
+  &lt;/style&gt;
+&lt;/head&gt;
+</pre>
+
 <!-- Section: Text Basics -->
-<h2>Text Basics</h2>
+<h2 id="text-basics">Text Basics</h2>
 <p><strong>Note:</strong> Headings and paragraphs.</p>
-<pre>&lt;h1&gt;Main Heading&lt;/h1&gt;
+<pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
 &lt;h2&gt;Subheading&lt;/h2&gt;
-&lt;p&gt;Paragraph text.&lt;/p&gt;</pre>
+&lt;p&gt;Paragraph text.&lt;/p&gt;
+</pre>
 
 <!-- Section: Inline Text Semantics -->
-<h2>Inline Text Semantics</h2>
+<h2 id="inline-text-semantics">Inline Text Semantics</h2>
 <p><strong>Note:</strong> Mark up words or phrases.</p>
 <ul>
-<li><code>&lt;em&gt;</code> emphasis</li>
-<li><code>&lt;strong&gt;</code> strong importance</li>
-<li><code>&lt;small&gt;</code> small print</li>
-<li><code>&lt;mark&gt;</code> highlight</li>
-<li><code>&lt;code&gt;</code> inline code</li>
-<li><code>&lt;abbr title="abbreviation"&gt;abbr&lt;/abbr&gt;</code></li>
-<li><code>&lt;time datetime="2024-01-01"&gt;</code> date or time</li>
+  <li><code>&lt;em&gt;</code> – emphasis</li>
+  <li><code>&lt;strong&gt;</code> – strong importance</li>
+  <li><code>&lt;small&gt;</code> – small print</li>
+  <li><code>&lt;mark&gt;</code> – highlight</li>
+  <li><code>&lt;code&gt;</code> – inline code</li>
+  <li><code>&lt;abbr title="abbreviation"&gt;abbr&lt;/abbr&gt;</code> – abbreviation</li>
+  <li><code>&lt;time datetime="2024-01-01"&gt;</code> – date or time</li>
 </ul>
-
-<pre>&lt;p&gt;
+<pre>
+&lt;p&gt;
   Use &lt;em&gt;emphasis&lt;/em&gt; and &lt;strong&gt;strong&lt;/strong&gt; text,
   &lt;code&gt;code&lt;/code&gt; and &lt;mark&gt;highlight&lt;/mark&gt;.
-&lt;/p&gt;</pre>
+&lt;/p&gt;
+</pre>
+
 <!-- Section: Grouping Content -->
-<h2>Grouping Content</h2>
+<h2 id="grouping-content">Grouping Content</h2>
 <p><strong>Note:</strong> Block-level elements.</p>
 <ul>
-<li><code>&lt;div&gt;</code> generic container.</li>
-<li><code>&lt;p&gt;</code> paragraph.</li>
-<li><code>&lt;hr&gt;</code> thematic break.</li>
-<li><code>&lt;blockquote&gt;</code> quoted section.</li>
-<li><code>&lt;pre&gt;</code> preformatted text.</li>
+  <li><code>&lt;div&gt;</code> – generic container.</li>
+  <li><code>&lt;p&gt;</code> – paragraph.</li>
+  <li><code>&lt;hr&gt;</code> – thematic break.</li>
+  <li><code>&lt;blockquote&gt;</code> – quoted section.</li>
+  <li><code>&lt;pre&gt;</code> – preformatted text.</li>
 </ul>
-
-<pre>&lt;div&gt;
+<pre>
+&lt;div&gt;
   &lt;blockquote&gt;Quote&lt;/blockquote&gt;
-  &lt;hr&gt;
-&lt;/div&gt;</pre>
+  &lt;hr /&gt;
+&lt;/div&gt;
+</pre>
+
 <!-- Section: Lists -->
-<h2>Lists</h2>
+<h2 id="lists">Lists</h2>
 <p><strong>Note:</strong> Ordered, unordered, and description lists.</p>
-<pre>&lt;ul&gt;
+<pre>
+&lt;ul&gt;
   &lt;li&gt;Item&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
@@ -92,124 +147,192 @@
 &lt;dl&gt;
   &lt;dt&gt;Term&lt;/dt&gt;
   &lt;dd&gt;Definition&lt;/dd&gt;
-&lt;/dl&gt;</pre>
+&lt;/dl&gt;
+</pre>
 
 <!-- Section: Links -->
-<h2>Links</h2>
+<h2 id="links">Links</h2>
 <p><strong>Note:</strong> Hyperlinks and anchors.</p>
-<pre>&lt;a href="https://example.com" target="_blank"&gt;Example&lt;/a&gt;
-&lt;a id="top"&gt;&lt;/a&gt; &lt;a href="#top"&gt;Internal link&lt;/a&gt;</pre>
+<pre>
+&lt;a href="https://example.com" target="_blank"&gt;Example&lt;/a&gt; <!-- External link -->
+&lt;a id="top"&gt;&lt;/a&gt; &lt;a href="#top"&gt;Internal link&lt;/a&gt;
+</pre>
 
 <!-- Section: Images -->
-<h2>Images</h2>
+<h2 id="images">Images</h2>
 <p><strong>Note:</strong> Embedding images.</p>
-<pre>&lt;img src="path/to/image.jpg" alt="description" width="200" height="100"&gt;</pre>
+<pre>
+&lt;img src="path/to/image.jpg" alt="description" width="200" height="100" /&gt;
+</pre>
 
 <!-- Section: Audio and Video -->
-<h2>Audio and Video</h2>
+<h2 id="audio-and-video">Audio and Video</h2>
 <p><strong>Note:</strong> Media elements.</p>
-<pre>&lt;audio controls&gt;
+<pre>
+&lt;audio controls&gt;
   &lt;source src="sound.mp3" type="audio/mpeg"&gt;
 &lt;/audio&gt;
 &lt;video controls width="320" height="240"&gt;
   &lt;source src="movie.mp4" type="video/mp4"&gt;
-&lt;/video&gt;</pre>
+&lt;/video&gt;
+</pre>
 
 <!-- Section: Tables -->
-<h2>Tables</h2>
+<h2 id="tables">Tables</h2>
 <p><strong>Note:</strong> Displaying tabular data.</p>
-<pre>&lt;table&gt;
+<pre>
+&lt;table&gt;
   &lt;caption&gt;Data&lt;/caption&gt;
-  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
-&lt;/table&gt;</pre>
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;&lt;td&gt;Footer&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</pre>
 
 <!-- Section: Forms -->
-<h2>Forms</h2>
+<h2 id="forms">Forms</h2>
 <p><strong>Note:</strong> Collecting user input.</p>
-<pre>&lt;form action="/submit" method="post"&gt;
-  &lt;label for="name"&gt;Name&lt;/label&gt;
-  &lt;input type="text" id="name" name="name"&gt;
-  &lt;input type="submit" value="Send"&gt;
-&lt;/form&gt;</pre>
+<pre>
+&lt;form action="/submit" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Contact&lt;/legend&gt;
+    &lt;label for="name"&gt;Name&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    &lt;input type="checkbox" id="subscribe" name="subscribe"&gt; Subscribe
+    &lt;input type="file" name="file"&gt;
+    &lt;textarea name="message"&gt;&lt;/textarea&gt;
+    &lt;select name="options"&gt;
+      &lt;option value="one"&gt;One&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input type="submit" value="Send"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
 <ul>
-<li>Common controls: <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code></li>
+  <li>Common controls: <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>, <code>&lt;label&gt;</code></li>
 </ul>
 
 <!-- Section: Semantic Elements -->
-<h2>Semantic Elements</h2>
+<h2 id="semantic-elements">Semantic Elements</h2>
 <p><strong>Note:</strong> Meaningful page structure.</p>
 <ul>
-<li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
-<li><code>&lt;figure&gt;</code> with <code>&lt;figcaption&gt;</code></li>
+  <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
+  <li><code>&lt;figure&gt;</code> with <code>&lt;figcaption&gt;</code></li>
 </ul>
-
-<pre>&lt;header&gt;Header&lt;/header&gt;
+<pre>
+&lt;header&gt;Header&lt;/header&gt;
 &lt;nav&gt;Links&lt;/nav&gt;
 &lt;main&gt;Content&lt;/main&gt;
-&lt;footer&gt;Footer&lt;/footer&gt;</pre>
+&lt;footer&gt;Footer&lt;/footer&gt;
+</pre>
+
 <!-- Section: Embedded Content -->
-<h2>Embedded Content</h2>
+<h2 id="embedded-content">Embedded Content</h2>
 <p><strong>Note:</strong> External resources.</p>
-<pre>&lt;iframe src="https://example.com" title="Example"&gt;&lt;/iframe&gt;
+<pre>
+&lt;iframe src="https://example.com" title="Example"&gt;&lt;/iframe&gt;
 &lt;embed src="file.swf"&gt;
-&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;</pre>
+&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;
+</pre>
+
+<!-- Section: Other Useful HTML5 Elements -->
+<h2 id="html5-elements">Other Useful HTML5 Elements</h2>
+<ul>
+  <li><code>&lt;details&gt;</code> — Disclosure widget.</li>
+  <li><code>&lt;summary&gt;</code> — Summary for details.</li>
+  <li><code>&lt;dialog&gt;</code> — Dialog box/modal.</li>
+  <li><code>&lt;template&gt;</code> — Client-side template.</li>
+</ul>
+<pre>
+&lt;details&gt;
+  &lt;summary&gt;More info&lt;/summary&gt;
+  Extra details here.
+&lt;/details&gt;
+
+&lt;dialog open&gt;Dialog content&lt;/dialog&gt;
+</pre>
 
 <!-- Section: Scripting -->
-<h2>Scripting</h2>
-<p><strong>Note:</strong> Adding JavaScript. Example only&mdash;no scripts run here.</p>
-<pre>&lt;script&gt;
-  console.log('Hello');
-&lt;/script&gt;</pre>
+<h2 id="scripting">Scripting</h2>
+<p><strong>Note:</strong> Adding JavaScript. Example only—no scripts run here.</p>
+<pre>
+&lt;script&gt;
+  console.log("Hello");
+&lt;/script&gt;
+</pre>
 
 <!-- Section: Global Attributes -->
-<h2>Global Attributes</h2>
+<h2 id="global-attributes">Global Attributes</h2>
 <p><strong>Note:</strong> Attributes usable on most elements.</p>
 <ul>
-<li><code>id</code>, <code>class</code>, <code>style</code> (inline CSS), <code>title</code></li>
-<li><code>hidden</code>, <code>tabindex</code>, <code>accesskey</code>, <code>draggable</code></li>
-<li><code>data-*</code> custom data attributes</li>
+  <li><code>id</code>, <code>class</code>, <code>style</code> (inline CSS), <code>title</code></li>
+  <li><code>hidden</code>, <code>tabindex</code>, <code>accesskey</code>, <code>draggable</code></li>
+  <li><code>data-*</code> custom data attributes</li>
 </ul>
-
-<pre>&lt;div id="main" class="box" data-info="sample"&gt;
+<pre>
+&lt;div id="main" class="box" data-info="sample"&gt;
   Content
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+</pre>
+
 <!-- Section: Accessibility -->
-<h2>Accessibility</h2>
+<h2 id="accessibility">Accessibility</h2>
 <p><strong>Note:</strong> ARIA and best practices.</p>
 <ul>
-<li>Use semantic elements for structure.</li>
-<li><code>alt</code> text on images.</li>
-<li>ARIA roles: <code>role="navigation"</code>, etc.</li>
-<li>Label form controls with <code>&lt;label&gt;</code>.</li>
+  <li>Use semantic elements for structure.</li>
+  <li><code>alt</code> text on images.</li>
+  <li>ARIA roles: <code>role="navigation"</code>, etc.</li>
+  <li>Label form controls with <code>&lt;label&gt;</code>.</li>
+  <li>Use <code>aria-label</code>, <code>aria-labelledby</code>, <code>aria-describedby</code> for screen readers.</li>
+  <li>Keyboard navigation: <code>tabindex</code>, <code>accesskey</code>.</li>
+  <li>Ensure color contrast and visible focus states.</li>
 </ul>
-
-<pre>&lt;nav role="navigation"&gt;Menu&lt;/nav&gt;
+<pre>
+&lt;nav role="navigation" aria-label="Main menu"&gt;Menu&lt;/nav&gt;
 &lt;form&gt;
   &lt;label for="email"&gt;Email&lt;/label&gt;
-  &lt;input id="email" type="email"&gt;
-&lt;/form&gt;</pre>
+  &lt;input id="email" type="email" aria-describedby="emailHelp"&gt;
+  &lt;small id="emailHelp"&gt;We'll never share your email.&lt;/small&gt;
+&lt;/form&gt;
+</pre>
+
 <!-- Section: Best Practices -->
-<h2>Best Practices</h2>
+<h2 id="best-practices">Best Practices</h2>
 <p><strong>Note:</strong> General tips.</p>
 <ul>
-<li>Keep markup clean and well-indented.</li>
-<li>Use semantic elements for clarity.</li>
-<li>Include <code>lang</code> attribute on <code>&lt;html&gt;</code>.</li>
-<li>Avoid deprecated tags like <code>&lt;font&gt;</code>.</li>
+  <li>Keep markup clean and well-indented.</li>
+  <li>Use semantic elements for clarity.</li>
+  <li>Include <code>lang</code> attribute on <code>&lt;html&gt;</code>.</li>
+  <li>Avoid deprecated tags like <code>&lt;font&gt;</code>.</li>
 </ul>
-
-<pre>&lt;html lang="en"&gt;
+<pre>
+&lt;html lang="en"&gt;
   &lt;body&gt;
     &lt;p&gt;Clean code&lt;/p&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;
+</pre>
+
+<!-- Section: Deprecated Tags -->
+<h2 id="deprecated">Deprecated Tags</h2>
+<ul>
+  <li><code>&lt;font&gt;</code> (use CSS for styling)</li>
+  <li><code>&lt;center&gt;</code> (use <code>text-align: center;</code> in CSS)</li>
+  <li><code>&lt;bgsound&gt;</code> (use <code>&lt;audio&gt;</code> instead)</li>
+</ul>
+
 <!-- Section: Reference Links -->
-<h2>Reference Links</h2>
+<h2 id="reference-links">Reference Links</h2>
 <p><strong>Note:</strong> Further reading (open in new tabs).</p>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
-<li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+  <li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard</a></li>
 </ul>
 
 </body>
